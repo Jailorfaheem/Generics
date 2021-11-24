@@ -10,7 +10,7 @@ namespace GenericsProgram
     {
 
         //This method created for maximum int number
-        public static int MaxNumber(int first, int second, int third)
+        public static double MaxNumber(double first, double second, double third)
         {
             if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)      //comparing values to each other by using compareTo keyword
             {
