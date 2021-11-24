@@ -9,8 +9,8 @@ namespace GenericsProgram
     class Generic
     {
 
-        //This method created for maximum int number
-        public static double MaxNumber(double first, double second, double third)
+        //This method created for maximum string value
+        public static string MaxValue(string first, string second, string third)
         {
             if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)      //comparing values to each other by using compareTo keyword
             {

@@ -6,8 +6,10 @@ namespace GenericsProgram
     {
         static void Main(string[] args)
         {
-            double output = Generic.MaxNumber(15.16, 16.27, 7.23);
-            Console.WriteLine("{0} is a maximum number ", output);
+            //calling function and storing into variable
+            string output = Generic.MaxValue("Faheem", "solapur", "maharashtra");
+            //Display Output
+            Console.WriteLine("{0} is a maximum string value ", output);
             Console.ReadLine();
 
         }
