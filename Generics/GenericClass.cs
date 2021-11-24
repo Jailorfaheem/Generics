@@ -6,39 +6,36 @@ using System.Threading.Tasks;
 
 namespace GenericsProgram
 {
-    class Generic<T> where T : IComparable           //Icomparable keyword is used for identify compareTo method in generics
+    class GenericMaximum<T> where T : IComparable           //Icomparable keyword is used for identify compareTo method in generics
     {
-        private T first, second, third;             //declaring instance variable
+        public T[] value;            //declaring instance variable
 
-        public Generic(T first, T second, T third)  //declaring parameterized constructor
+        public GenericMaximum(T[] value)  //declaring parameterized constructor
         {
-            this.first = first;
-            this.second = second;
-            this.third = third;
+            this.value = value;
+        }
+        public T[] Sort(T[] values)
+        {
+            Array.Sort(values);
+            return values;
+        }
+        public T MaxValue(params T[] values)
+        {
+            var sorted_values = Sort(values);
+            return sorted_values[^1];
         }
 
         //This method created for maximum string value
-        public static T MaxValue(T first, T second, T third)
+        public T MaxMethod()
         {
-            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)      //comparing values to each other by using compareTo keyword
-            {
-                return first;                                                  //returning value if condition is true
-            }
-            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
-            {
-                return second;
-            }
-            if (third.CompareTo(first) > 0 && third.CompareTo(second) > 0)
-            {
-                return third;
-            }
-            return default;
+            var max = MaxValue(this.value);
+            return max;
         }
 
-        public T MaximumValue()
+        public void PrintMaxValue()
         {
-            T max = Generic<T>.MaxValue(this.first, this.second, this.third);
-            return max;
+            var max = MaxValue(this.value);
+            Console.WriteLine("Maximum value is " + max);
         }
 
     }
